@@ -6,6 +6,6 @@ COPY src ./src
 RUN mvn clean package
 
 # -------- RUN STAGE --------
-FROM tomcat:9.0-jdk17
+FROM tomcat:10.1-jdk17
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
